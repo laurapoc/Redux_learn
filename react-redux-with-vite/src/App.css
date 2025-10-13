@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body {
+  background-color: #ffffff;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +43,40 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+}
+
+.buttons {
+  background-color: #646cff;
+}
+
+.activityDiv {
+  margin: 20px auto;
+  font-size: 24px;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.toggleButton {
+  margin: 20px auto;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 10px;
+  background-color: #2027a9;
+}
+
+.counterBox {
+  border: 1px solid #646cff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  height: 200px;
+  width: 300px;
+  position: relative;
 }

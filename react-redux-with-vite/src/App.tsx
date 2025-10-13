@@ -1,28 +1,37 @@
 import { Activity, useState } from "react";
 
 import "./App.css";
+import { Counter } from "./components/Counter";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [showActivityCount, setShowActivityCount] = useState(true);
+  const [showCount, setShowCount] = useState(true);
 
-  const toggleLoading = () => {
-    setIsLoading(!isLoading);
+  const toggleShowCount = () => {
+    setShowCount(!showCount);
+  };
+  const toggleShowActivityCount = () => {
+    setShowActivityCount(!showActivityCount);
   };
 
   return (
-    <>
-      <Activity mode={isLoading ? "visible" : "hidden"}>
-        <div>Loading...</div>
-        <button onClick={toggleLoading}>Set to not loading</button>
-      </Activity>
-      <Activity mode={!isLoading ? "visible" : "hidden"}>
-        <div>
-          <h1>Hello World</h1>
-        </div>
+    <div className="container">
+      <div className="counterBox">
+        {showCount && <Counter />}
+        <button className="toggleButton" onClick={toggleShowCount}>
+          Toggle not Activity count
+        </button>
+      </div>
 
-        <button onClick={toggleLoading}>Set to loading</button>
-      </Activity>
-    </>
+      <div className="counterBox">
+        <Activity mode={showActivityCount ? "visible" : "hidden"}>
+          <Counter />
+        </Activity>
+        <button className="toggleButton" onClick={toggleShowActivityCount}>
+          Toggle Activity count
+        </button>
+      </div>
+    </div>
   );
 }
 
