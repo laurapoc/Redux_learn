@@ -7,14 +7,22 @@ export const Counter = () => {
     setCount(count + 1);
   };
 
+  const resetCount = () => {
+    setCount(0);
+  };
+
   return (
     <>
       <div>
         <div className="activityDiv">Count is {count}</div>
-
-        <button className="buttons" onClick={incrementCount}>
-          Increment count
-        </button>
+        <div className="actionButtons">
+          <button className="buttons" onClick={incrementCount}>
+            Increment count
+          </button>
+          <button className="buttons" onClick={resetCount}>
+            Reset count
+          </button>
+        </div>
       </div>
     </>
   );
